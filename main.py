@@ -7,7 +7,7 @@ import logging
 import re
 import asyncio
 import sys
-
+import aiogram
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import CommandStart, Command, CommandObject
 from aiogram.utils.markdown import hcode, hbold, hlink
