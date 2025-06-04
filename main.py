@@ -143,11 +143,8 @@ dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def command_start_handler(message: types.Message) -> None:
-    await message.answer(f"Hello, {hbold(message.from_user.full_name)}!
-
-"
-                         f"Set your API token using: {hcode('/set_api_token <your_token>')}
-"
+    await message.answer(f"Hello, {hbold(message.from_user.full_name)"}!
+                         f"Set your API token using: {hcode('/set_api_token <your_token>')"}
                          f"Then use: {hcode('/download <url>')}")
 
 @dp.message(Command("set_api_token"))
