@@ -142,10 +142,16 @@ bot = Bot(token=TELEGRAM_BOT_TOKEN)
 dp = Dispatcher()
 
 @dp.message(CommandStart())
+from aiogram import types
+from aiogram.utils.markdown import hbold, hcode
+
 async def command_start_handler(message: types.Message) -> None:
-    await message.answer(f"Hello, {hbold(message.from_user.full_name)"}!
-                         f"Set your API token using: {hcode('/set_api_token <your_token>')"}
-                         f"Then use: {hcode('/download <url>')}")
+    await message.answer(
+        f"Hello, {hbold(message.from_user.full_name)}\n"
+        f"Set your API token using: {hcode('/set_api_token <your_token>')}\n"
+        f"Then use: {hcode('/download <url>')}"
+    )
+
 
 @dp.message(Command("set_api_token"))
 async def set_api_token_handler(message: types.Message, command: CommandObject) -> None:
