@@ -142,9 +142,6 @@ bot = Bot(token=TELEGRAM_BOT_TOKEN)
 dp = Dispatcher()
 
 @dp.message(CommandStart())
-from aiogram import types
-from aiogram.utils.markdown import hbold, hcode
-
 async def command_start_handler(message: types.Message) -> None:
     await message.answer(
         f"Hello, {hbold(message.from_user.full_name)}\n"
